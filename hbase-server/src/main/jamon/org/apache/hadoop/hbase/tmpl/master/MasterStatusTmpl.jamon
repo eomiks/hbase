@@ -431,6 +431,7 @@ AssignmentManager assignmentManager = master.getAssignmentManager();
             $.tablesorter.addParser(
             {
                 id: "separator",
+
                 is: function (s) {
                     return /^[0-9]?[0-9,]*$/.test(s);
                 }, format: function (s) {
@@ -439,6 +440,7 @@ AssignmentManager assignmentManager = master.getAssignmentManager();
             });
             $("#baseStatsTable").tablesorter({
                 headers: {
+                    1: {sorter: 'shortDate', dateFormat: 'EEE MMM dd HH:mm:ss Z yyyy'},
                     4: {sorter: 'separator'},
                     5: {sorter: 'separator'}
                 }
